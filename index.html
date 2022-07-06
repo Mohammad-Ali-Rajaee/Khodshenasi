@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khodshenasi</title>
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css">
@@ -59,32 +60,40 @@
             </div>
             <ul class="navbar">
                 <li>
-                    <div class="hoverr"><a href="#">آغاز</a></div>
+                    <a href="#">آغاز</a></div>
                 </li>
                 <li>
-                    <div class="hoverr"><a href="#">چرا خودشناسی</a></div>
+                    <a href="#">چرا خودشناسی</a></div>
                 </li>
                 <li>
-                    <div class="hoverr"><a href="#">منتخب صوت</a></div>
+                    <a href="#">منتخب صوت</a></div>
                 </li>
                 <li>
-                    <div class="hoverr"><a href="#">جلسات</a></div>
+                    <a href="#">جلسات</a></div>
                 </li>
                 <li>
-                    <div class="hoverr"><a href="#">منتخب متن</a></div>
+                    <a href="#">منتخب متن</a></div>
                 </li>
                 <li>
-                    <div class="hoverr"><a href="#">شبکه های اجتماعی</a></div>
+                    <a href="#">شبکه های اجتماعی</a></div>
                 </li>
                 <li>
-                    <div class="hoverr"><a href="#">سوالات متداول</a></div>
+                    <a href="#">سوالات متداول</a></div>
                 </li>
-                <li><select>
-                        <option value="persian">فارسی</option>
-                        <option value="german">German</option>
-                        <option value="english">English</option>
-                        <option value="french">French</option>
-                    </select></li>
+                <li><div class="dropdown">
+                    <label for="dropdown-menu">
+                        فارسی
+                        <i class="fa fa-chevron-down"></i>
+                    </label>
+                    <input type="checkbox" id="dropdown-menu">
+                    <div class="languages">
+                        <a href="#" class="lang-item">فارسی</a>
+                        <a href="#" class="lang-item">عربی</a>
+                        <a href="#" class="lang-item">آلمانی</a>
+                        <a href="#" class="lang-item">انگلیسی</a>
+                        <a href="#" class="lang-item">فرانسوی</a>
+                    </div>
+                </div></li>
             </ul>
             <div class="hidden-contact">
                 <a class="_link hidden-link1" href="#" title="کپی کردن آدرس"><img style="width:60% ;"
