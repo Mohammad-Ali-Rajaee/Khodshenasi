@@ -34,20 +34,34 @@ html {
 }
 header {
   display: flex;
-  width: 90%;
+  width: 91%;
   height: 100%;
   max-width: 1200px;
   align-items: center;
   justify-content: space-between;
   line-height: 3rem;
 }
+.header .remain{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .else{
+  display: flex;
+    align-items: center;
+    width: 94%;
+    justify-content: space-between;
+    height: 100%;
+    transition: .5s;
+}
+.header .else.else-active{
+  transform: translateX(0);
+}
 .header .navbar {
   display: flex;
-  max-width: 650px;
+  max-width: 660px;
   height: 100%;
-  justify-content: space-evenly;
   list-style-type: none;
-  gap: 16px;
   margin: 0 20px;
 }
 .header .navbar li {
@@ -57,6 +71,7 @@ header {
 .header .navbar li a {
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -107,8 +122,7 @@ input {
 .header header .search-bar {
   width: 20%;
 }
-.search-bar label,
-.hidden-menu .search-bar label {
+.search-bar label{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -118,12 +132,10 @@ input {
   border: none;
   border-radius: 50%;
 }
-.search-bar .fa,
-.hidden-menu .search-bar .fa {
+.search-bar .fa{
   text-align: center;
 }
-.search-bar:focus-within,
-.hidden-menu .search-bar:focus-within {
+.search-bar:focus-within{
   box-shadow: 0 0 0 1px #58c383;
   color: #000000;
 }
@@ -163,102 +175,35 @@ input {
 #dropdown-menu:checked ~ .languages {
   display: block;
 }
-select {
-  border: none;
-  outline: none;
-  background: #fff;
-  cursor: pointer;
-}
 .menu {
   display: none;
+}
+.menu .hambergur .line,.menu .hambergur::before,.menu .hambergur::after{
+  content: '';
+  display: flex;
+  margin: 5px 0;
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  transition: all ease-in-out .5s;
+}
+.hambergur.is-active::before{
+  transform: rotate(43deg) translate(6.5px,6px);
+}
+.hambergur.is-active .line{
+  transform: translateX(-10px);
+  opacity: 0;
+}
+.hambergur.is-active::after{
+  transform: rotate(-45deg) translate(5.5px,-5px);
+}
+.navbar .nav--list.navbar--active{
+  transform: translateX(55px);
 }
 .menu-link {
   cursor: pointer;
   display: flex;
   align-items: center;
-}
-.hidden-menu {
-  display: none;
-  transition: all 0.5s;
-  width: 200px;
-}
-.hidden-menu label {
-  height: 30px;
-  width: 30px;
-  margin: 0 auto;
-  text-align: center;
-}
-.hidden-menu label .fa {
-  color: #2c9564;
-}
-.hidden-menu .navbar {
-  display: flex;
-  max-width: 650px;
-  height: 100%;
-  justify-content: space-evenly;
-  list-style-type: none;
-  gap: 16px;
-  margin: 0 20px;
-}
-.hidden-menu .navbar li {
-  height: 100%;
-  position: relative;
-  line-height: 4.5rem;
-}
-.hidden-menu .navbar li a {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: #000000;
-}
-.hidden-menu .navbar li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -10px;
-  width: 2px;
-  height: 100%;
-  transform: scale(1, 0);
-  background-color: #2c9564;
-  transition: 0.3s;
-}
-.hidden-menu .navbar li:not(:last-child):hover::after {
-  transform: scale(1, 1);
-  color: #2c9564;
-}
-.hidden-menu .navbar li:not(:last-child):hover a {
-  color: #2c9564;
-}
-.hidden-menu .hidden-contact {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 1.5rem 0;
-}
-.hidden-menu .hidden-contact ._link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 25px;
-  height: 25px;
-  border-radius: 5px;
-}
-.hidden-menu .hidden-contact .hidden-link1 {
-  background: #656a6c;
-}
-.hidden-menu .hidden-contact .hidden-link2 {
-  background: #219dd3;
-}
-.hidden-menu .hidden-contact .hidden-link3 {
-  background: #25d366;
-}
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  -webkit-appearance: none;
 }
 .page-top {
   width: 100%;
@@ -649,10 +594,4 @@ hr {
 .paeen .social-icon .fa-microphone {
   background-color: #ffa048;
   color: #fff;
-}
-#Menu {
-  display: none;
-}
-#Menu:checked + .hidden-menu {
-  left: 0;
 }
