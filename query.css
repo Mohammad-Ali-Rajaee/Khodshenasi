@@ -188,7 +188,41 @@
     width: 100%;
     height: 100%
   }
-  .menu{
-    display: block;
+  .menu {
+    display: flex;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+  .menu .hambergur .line {
+    position: relative;
+    background-color: #000;
+    height: 3px;
+    width: 25px;
+    transition: all .5s ease-in-out;
+  }
+  .menu .hambergur .line::after,
+  .menu .hambergur .line::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+  }
+  .menu .hambergur .line::after{
+    top: -8px;
+  }
+  .hambergur.is-active .line {
+    transform: rotate(135deg) ;
+  }
+  .hambergur.is-active .line::after,
+  .hambergur.is-active .line::before{
+    top: 0;
+    transform: rotate(90deg);
+  }
+  .menu:hover > .hambergur.is-active .line{
+    transform: rotate(225deg);
   }
 }
