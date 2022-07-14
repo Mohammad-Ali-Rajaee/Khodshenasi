@@ -6,11 +6,23 @@ const navslide = () => {
   const header = document.querySelector(".else");
   const menu_btn = document.querySelector(".hambergur");
 
-  menu.addEventListener("click", () => {
+  menu.addEventListener("click", menu_open);
+  
+  function menu_open(event){
+  event.stopPropagation();
     header.classList.toggle("else-active");
 
     menu_btn.classList.toggle("is-active");
-  });
+  };
+
+  document.addEventListener("click", menu_close);
+  function menu_close() {
+    if (header.classList.contains("else-active")) {
+      header.classList.remove("else-active");
+      menu_btn.classList.remove("is-active");
+    }
+  }
+
 };
 
 navslide();
