@@ -1,3 +1,6 @@
+
+//------------hamburger menu-------------------------
+
 const navslide = () => {
   const menu = document.querySelector(".menu");
   const header = document.querySelector(".else");
@@ -9,38 +12,45 @@ const navslide = () => {
     menu_btn.classList.toggle("is-active");
   });
 };
-/* back to top button */
+
+navslide();
+
+/* back to top button-------------------------------------------------------------- */
 const BackToTopBtn = document.querySelector(".top");
 const FixedHeader = document.querySelector(".main-header");
 window.addEventListener("scroll", ToTop);
 
 function ToTop() {
   if (window.pageYOffset > 100) {
-    if (!BackToTopBtn.classList.contains("Back_To_Top")) {
-        BackToTopBtn.classList.remove("Back_To_Top_End");
-        BackToTopBtn.classList.add("Back_To_Top");
-        BackToTopBtn.style.display = "block";
-        // FixedHeader.classList.add("fixed-header");
-    }
+    BackToTopBtn.classList.add("Back_To_Top");
   } else {
-    BackToTopBtn.style.display = "none";
-    if (BackToTopBtn.classList.contains("Back_To_Top")) {
-        BackToTopBtn.classList.remove("Back_To_Top");
-        BackToTopBtn.classList.add("Back_To_Top_End");
-    }
+    BackToTopBtn.classList.remove("Back_To_Top");
+  }
 }
-}
+
 BackToTopBtn.addEventListener("click", back);
 
 function back() {
   window.scrollTo(0, 0);
 }
 
-const dropdownLanguages = () => {
-  const drop = document.querySelector(".dropdown");
 
-  menu.addEventListener("click", () => {
-    drop.classList.add("languages");
-  });
-};
-navslide();
+
+//-------dropdown----------------------------------------------
+
+const drop = document.querySelector(".dropdown");
+const language = document.querySelector(".dropdown-lang");
+
+drop.addEventListener("click", open);
+function open(event) {
+  event.stopPropagation();
+  language.classList.toggle("languages");
+}
+
+document.addEventListener("click", close);
+function close() {
+  if (language.classList.contains("languages")) {
+    language.classList.remove("languages");
+  }
+}
+
