@@ -143,6 +143,7 @@
     top: 64px;
     left: 0;
     transform: translateX(-100%);
+    display: none;
     align-items: center;
     height: max-content;
     transition: transform 0.5s;
@@ -185,6 +186,12 @@
   .header header .else .dropdown {
     width: 90%;
     order: 3;
+  }
+  .dropdown .options{
+    width: 100%;
+  }
+  .dropdown .select{
+  width: 80%;
   }
   .languages {
     right: 0;
