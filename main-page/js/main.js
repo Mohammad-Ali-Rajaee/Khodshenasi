@@ -1,5 +1,5 @@
 //------------hamburger menu-------------------------
-
+//---------------------------------------------------
 const navslide = () => {
   const menu = document.querySelector(".menu");
   const header = document.querySelector(".else");
@@ -25,16 +25,21 @@ const navslide = () => {
 
 navslide();
 
+
+//----------------------------------------------------------------------------------
 /* back to top button-------------------------------------------------------------- */
+//-------------------------------------------------------------------
 const BackToTopBtn = document.querySelector(".top");
-const FixedHeader = document.querySelector(".main-header");
+const FixedHeader = document.querySelector(".header");
 window.addEventListener("scroll", ToTop);
 
 function ToTop() {
-  if (window.pageYOffset > 100) {
+  if (window.pageYOffset > 70) {
     BackToTopBtn.classList.add("Back_To_Top");
+    FixedHeader.classList.add("fixed-header")
   } else {
     BackToTopBtn.classList.remove("Back_To_Top");
+    FixedHeader.classList.remove("fixed-header");
   }
 }
 
@@ -44,24 +49,10 @@ function back() {
   window.scrollTo(0, 0);
 }
 
-//-------dropdown----------------------------------------------
-
-// const drop = document.querySelector(".dropdown");
-// const language = document.querySelector(".dropdown-lang");
-
-// drop.addEventListener("click", open);
-// function open(event) {
-//   event.stopPropagation();
-//   language.classList.toggle("languages");
-// }
-
-// function close() {
-//   
 
 //--------------- dropdown------------------------
 
 const dropdowns = document.querySelector(".dropdown");
-
 const select = document.querySelector(".select");
 const options = document.querySelector(".options");
 const selected = document.querySelector(".selected");
@@ -93,4 +84,12 @@ function options_open(event) {
 document.addEventListener("click", ()=>{
   close(options,"options--active");
   close(caret,"caret-rotate");
+});
+
+//--------------searchbar-----------------------
+
+const searchbar = document.querySelector(".search-bar");
+searchbar.addEventListener("click", (event)=> {
+  event.stopPropagation();
+  searchbar.classList.toggle("searching");
 });
