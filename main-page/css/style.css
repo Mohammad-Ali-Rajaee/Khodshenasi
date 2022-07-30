@@ -16,6 +16,15 @@ html {
   font-size: 1.5rem;
 }
 
+@keyframes fade{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -28,7 +37,8 @@ html {
   top: 0;
   z-index: 67;
   transition: all 0.5s;
-  animation: fixed_animation;
+  animation-name: fixed_animation;
+  animation-duration: 0.5s;
 }
 @keyframes fixed_animation{
   from{
@@ -74,6 +84,8 @@ html {
   justify-content: space-between;
   height: 100%;
   background-color: inherit;
+  animation-name: fade;
+  animation-duration: 0.5s;
 }
 
 .header .else.else-active {
@@ -214,6 +226,8 @@ input {
   display: none;
   background-color: inherit;
   border-radius: 0.5rem;
+  animation-name: fade;
+  animation-duration: 0.5s;
 }
 
 .options--active {
@@ -231,6 +245,12 @@ input {
 .options li:hover {
   background-color: #58c383;
   color: #fff;
+}
+.options li:last-child:hover{
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+.options li:first-child:hover{
+  border-radius: 0.5rem 0.5rem 0 0 ;
 }
 
 .caret-rotate {

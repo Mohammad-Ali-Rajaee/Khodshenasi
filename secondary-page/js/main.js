@@ -41,9 +41,11 @@ function ToTop() {
   if (window.pageYOffset > 70) {
     BackToTopBtn.classList.add("Back_To_Top");
     FixedHeader.classList.add("fixed-header");
+    document.querySelector(".page-container").style.padding = "64px 0 0 0";
   } else {
     BackToTopBtn.classList.remove("Back_To_Top");
     FixedHeader.classList.remove("fixed-header");
+    document.querySelector(".page-container").style.padding = "0";
   }
 }
 
@@ -52,6 +54,7 @@ BackToTopBtn.addEventListener("click", back);
 function back() {
   window.scrollTo(0, 0);
 }
+
 
 // --------------------------ideas--------------
 

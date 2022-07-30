@@ -36,10 +36,12 @@ window.addEventListener("scroll", ToTop);
 function ToTop() {
   if (window.pageYOffset > 70) {
     BackToTopBtn.classList.add("Back_To_Top");
-    FixedHeader.classList.add("fixed-header")
+    FixedHeader.classList.add("fixed-header");
+    document.querySelector(".container").style.padding = "64px 0 0 0";
   } else {
     BackToTopBtn.classList.remove("Back_To_Top");
     FixedHeader.classList.remove("fixed-header");
+    document.querySelector(".container").style.padding = "0";
   }
 }
 
@@ -64,6 +66,7 @@ function clicked(element) {
   document.getElementById("selected").innerHTML = value;
   close(options,"options--active")
   close(caret,"caret-rotate")
+  element.classList.toggle("option--active");
 }
 
 
